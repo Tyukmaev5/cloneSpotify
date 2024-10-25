@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:spotify/common/common.dart'; 
+import 'package:spotify/common/common.dart';
 import 'package:spotify/core/configs/configs.dart';
+import 'package:spotify/presentation/pages.dart';
 
 class SignupOrSigninPage extends StatelessWidget {
   const SignupOrSigninPage({super.key});
@@ -72,7 +73,14 @@ class SignupOrSigninPage extends StatelessWidget {
                       Expanded(
                         flex: 1,
                         child: BasicAppButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      const SignupPage(),
+                                ));
+                          },
                           title: 'Register',
                         ),
                       ),
@@ -80,19 +88,20 @@ class SignupOrSigninPage extends StatelessWidget {
                         width: 20,
                       ),
                       Expanded(
-                        flex: 1,
-                        child: TextButton(
-                          onPressed: () {},
-                          child: Text(
-                            'Sign in',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
-                              color: context.isDarkMode ? Colors.white : Colors.black,
+                          flex: 1,
+                          child: TextButton(
+                            onPressed: () {},
+                            child: Text(
+                              'Sign in',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                                color: context.isDarkMode
+                                    ? Colors.white
+                                    : Colors.black,
+                              ),
                             ),
-                          ),
-                        )
-                      )
+                          ))
                     ],
                   ),
                 ],
